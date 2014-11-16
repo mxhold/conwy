@@ -1,3 +1,4 @@
+require 'delegate'
 require 'conwy/version'
 require 'conwy/cell'
 require 'conwy/world'
