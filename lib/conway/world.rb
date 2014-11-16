@@ -57,7 +57,7 @@ module Conway
       ].map do |x_shift, y_shift|
         x = row_index +  x_shift
         y = cell_index + y_shift
-        if (x >= 0) && (x >= 0)
+        if (x >= 0) && (y >= 0)
           cell_grid.fetch(x, {})[y]
         end
       end.compact
