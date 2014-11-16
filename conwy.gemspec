@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Max Holder']
   spec.email         = ['mxhold@gmail.com']
   spec.summary       = %( Conway's Game of Life )
-  spec.description   = %( a simple implementntaintiaonn )
+  spec.description   = %( a simple implementation of Conway's Game of Life in Ruby )
   spec.homepage      = ''
   spec.license       = 'MIT'
 
