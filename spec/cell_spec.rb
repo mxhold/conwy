@@ -6,7 +6,7 @@ describe Conwy::Cell do
       subject { described_class.new(alive: true) }
       context '1 alive neighbor' do
         it 'returns a dead cell' do
-          expect(subject.next(alive_neighbors: 1)).to be_dead
+          expect(subject.next(alive_neighbors: 1)).not_to be_alive
         end
       end
       context '2 alive neighbors' do
@@ -21,7 +21,7 @@ describe Conwy::Cell do
       end
       context '4 alive neighbor' do
         it 'returns a dead cell' do
-          expect(subject.next(alive_neighbors: 4)).to be_dead
+          expect(subject.next(alive_neighbors: 4)).not_to be_alive
         end
       end
     end
@@ -29,12 +29,12 @@ describe Conwy::Cell do
       subject { described_class.new(alive: false) }
       context '1 alive neighbor' do
         it 'returns a dead cell' do
-          expect(subject.next(alive_neighbors: 1)).to be_dead
+          expect(subject.next(alive_neighbors: 1)).not_to be_alive
         end
       end
       context '2 alive neighbors' do
         it 'returns a dead cell' do
-          expect(subject.next(alive_neighbors: 2)).to be_dead
+          expect(subject.next(alive_neighbors: 2)).not_to be_alive
         end
       end
       context '3 alive neighbors' do
@@ -44,7 +44,7 @@ describe Conwy::Cell do
       end
       context '4 alive neighbor' do
         it 'returns a dead cell' do
-          expect(subject.next(alive_neighbors: 4)).to be_dead
+          expect(subject.next(alive_neighbors: 4)).not_to be_alive
         end
       end
     end

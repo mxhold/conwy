@@ -8,10 +8,6 @@ module Conwy
       @alive
     end
 
-    def dead?
-      !alive?
-    end
-
     def next(alive_neighbors:)
       if alive_neighbors == 3 || (alive? && alive_neighbors == 2)
         self.class.new(alive: true)
