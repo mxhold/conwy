@@ -1,7 +1,7 @@
 module Conway
   class World
     def initialize(cell_string, cell_grid: nil)
-      @cell_grid = cell_grid || cells_from_string(cell_string)
+      @cell_grid = cell_grid || cell_grid_from_string(cell_string)
     end
 
     def to_s
@@ -28,7 +28,7 @@ module Conway
       end
     end
 
-    def cells_from_string(cell_string)
+    def cell_grid_from_string(cell_string)
       cell_string.split("\n").map do |row|
         row.each_char.map do |char|
           Cell.new(alive: char == '1')
