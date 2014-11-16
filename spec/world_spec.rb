@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Conway::World do
+describe Conwy::World do
   subject do
     described_class.new("010\n010\n010")
   end

@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Conway do
+describe Conwy do
   it 'has a version number' do
-    expect(Conway::VERSION).not_to be nil
+    expect(Conwy::VERSION).not_to be nil
   end
 
   describe '.run' do

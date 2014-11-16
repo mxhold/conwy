@@ -1,11 +1,11 @@
 #!/usr/bin/env ruby
 
-require 'conway'
+require 'conwy'
 
 iterations = (ARGV.shift || 1).to_i
 initial_input = ARGF.read
 
 output = (1..iterations).reduce(initial_input) do |input, _|
-  Conway.run(input)
+  Conwy.run(input)
 end
 puts output

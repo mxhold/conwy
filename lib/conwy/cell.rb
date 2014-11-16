@@ -1,4 +1,4 @@
-module Conway
+module Conwy
   class Cell
     def initialize(alive:)
       @alive = alive

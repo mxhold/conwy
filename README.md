@@ -1,14 +1,17 @@
-# Conway
+# Conwy
 
 This gem plays [Conway's Game of
 Life](https://en.wikipedia.org/wiki/Conway's_Game_of_Life).
+
+The name comes from [a town in Wales](https://en.wikipedia.org/wiki/Conwy)
+because there is already a gem called Conway.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'conway'
+gem 'conwy'
 ```
 
 And then execute:
@@ -17,14 +20,14 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install conway
+    $ gem install conwy
 
 ## Usage
 
-Conway gets it initial state from stdin and then returns the next iteration:
+Conwy gets it initial state from stdin and then returns the next iteration:
 
 ```
-$ echo "010\n010\n010" | conway
+$ echo "010\n010\n010" | conwy
 000
 111
 000
@@ -33,7 +36,7 @@ $ echo "010\n010\n010" | conway
 You can also provide a number of iterations to perform:
 
 ```
-$ echo "010\n010\n010" | conway 2
+$ echo "010\n010\n010" | conwy 2
 010
 010
 010
@@ -41,7 +44,7 @@ $ echo "010\n010\n010" | conway 2
 
 ## Contributing
 
-1. Fork it ( https://github.com/mxhold/conway/fork )
+1. Fork it ( https://github.com/mxhold/conwy/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

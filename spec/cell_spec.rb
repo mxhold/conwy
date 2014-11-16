@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Conway::Cell do
+describe Conwy::Cell do
   describe '#next' do
     context 'alive cell' do
       subject { described_class.new(alive: true) }

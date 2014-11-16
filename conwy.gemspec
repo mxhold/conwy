@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'conway/version'
+require 'conwy/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'conway'
-  spec.version       = Conway::VERSION
+  spec.name          = 'conwy'
+  spec.version       = Conwy::VERSION
   spec.authors       = ['Max Holder']
   spec.email         = ['mxhold@gmail.com']
   spec.summary       = %( Conway's Game of Life )

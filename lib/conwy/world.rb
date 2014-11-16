@@ -1,4 +1,4 @@
-module Conway
+module Conwy
   class World
     def initialize(cell_string, cell_grid: nil)
       @cell_grid = cell_grid || cell_grid_from_string(cell_string)
