@@ -21,11 +21,22 @@ Or install it yourself as:
 
 ## Usage
 
+Conway gets it initial state from stdin and then returns the next iteration:
+
 ```
-$ conway < echo "010\n010\n010"
+$ echo "010\n010\n010" | conway
 000
 111
 000
+```
+
+You can also provide a number of iterations to perform:
+
+```
+$ echo "010\n010\n010" | conway 2
+010
+010
+010
 ```
 
 ## Contributing
