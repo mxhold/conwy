@@ -4,7 +4,7 @@ This gem plays [Conway's Game of
 Life](https://en.wikipedia.org/wiki/Conway's_Game_of_Life).
 
 The name comes from [a town in Wales](https://en.wikipedia.org/wiki/Conwy)
-because there is already a gem called Conway.
+because `conway` was already taken.
 
 ## Installation
 
@@ -24,22 +24,34 @@ Or install it yourself as:
 
 ## Usage
 
-Conwy gets it initial state from stdin and then returns the next iteration:
+Conwy gets it initial state from stdin and then prints the next iteration:
 
 ```
-$ echo "010\n010\n010" | conwy
+$ echo "010\n010\n010" > blinker
+$ cat blinker
+010
+010
+010
+$ cat blinker | conway
 000
 111
 000
 ```
 
-You can also provide a number of iterations to perform:
+You can also provide a number of iterations to perform before printing:
 
 ```
-$ echo "010\n010\n010" | conwy 2
-010
-010
-010
+$ echo "00100\n10100\n01100\n00000" > glider
+$ cat glider
+00100
+10100
+01100
+00000
+$ cat glider | conwy 4
+00000
+00010
+01010
+00110
 ```
 
 ## Contributing
