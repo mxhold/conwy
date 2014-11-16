@@ -21,9 +21,9 @@ module Conwy
     attr_reader :cell_grid
 
     def next_cell_grid
-      cell_grid.map.with_index do |row, row_index|
-        row.map.with_index do |cell, cell_index|
-          next_cell(cell, row_index, cell_index)
+      cell_grid.map.with_index do |row, x|
+        row.map.with_index do |cell, y|
+          cell.next(alive_neighbors: alive_neighbors(Coordinate.new(x, y)))
         end
       end
     end
@@ -36,31 +36,44 @@ module Conwy
       end
     end
 
-    def next_cell(cell, row_index, cell_index)
-      cell.next(alive_neighbors: alive_neighbors(row_index, cell_index))
+    def alive_neighbors(coordinate)
+      neighbors(coordinate).select(&:alive?).size
     end
 
-    def alive_neighbors(row_index, cell_index)
-      neighbors(row_index, cell_index).select(&:alive?).size
-    end
-
-    def neighbors(row_index, cell_index)
-      [
-        [-1, -1],
-        [-1, 0],
-        [-1, 1],
-        [0, -1],
-        [0, 1],
-        [1, -1],
-        [1, 0],
-        [1, 1],
-      ].map do |x_shift, y_shift|
-        x = row_index +  x_shift
-        y = cell_index + y_shift
-        if (x >= 0) && (y >= 0)
-          cell_grid.fetch(x, {})[y]
-        end
+    def neighbors(coordinate)
+      coordinate.neighbors.map do |neighbor_coordinate|
+        cell_at(neighbor_coordinate)
       end.compact
+    end
+
+    def cell_at(coordinate)
+      cell_grid.fetch(coordinate.x, {})[coordinate.y] unless coordinate.negative?
+    end
+
+    class Coordinate < Struct.new(:x, :y)
+      def negative?
+        x < 0 || y < 0
+      end
+
+      def neighbors
+        neighbor_shifts.map do |x, y|
+          shift(x, y)
+        end
+      end
+
+      private
+
+      def shift(x_shift, y_shift)
+        self.class.new(x + x_shift, y + y_shift)
+      end
+
+      def neighbor_shifts
+        [
+          [-1, -1], [-1,  0], [-1,  1],
+          [ 0, -1],           [ 0,  1],
+          [ 1, -1], [ 1,  0], [ 1,  1],
+        ]
+      end
     end
   end
 end
